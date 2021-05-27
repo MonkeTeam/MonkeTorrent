@@ -1,6 +1,6 @@
 const Peer = require('peerjs-on-node').Peer
 
-class Peer
+class PeerClient
 {
 	constructor()
 	{
@@ -19,7 +19,7 @@ class Peer
 
 	connect(peer_id)
 	{
-		this.connection = peer.connect(peer)
+		this.connection = this.peer.connect(peer_id)
 	}
 
 	onIncoming(onData)
@@ -48,4 +48,4 @@ class Peer
 	}
 }
 
-module.exports = Peer
+module.exports = PeerClient
