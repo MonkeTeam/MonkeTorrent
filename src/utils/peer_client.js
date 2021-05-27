@@ -19,7 +19,7 @@ class PeerClient
 
 	connect(peer_id)
 	{
-		this.connection = peer.connect(peer_id)
+		this.connection = this.peer.connect(peer_id)
 	}
 
 	onIncoming(onData)
