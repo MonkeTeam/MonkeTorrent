@@ -1,6 +1,6 @@
 const Peer = require('peerjs-on-node').Peer
 
-class Peer
+class PeerClient
 {
 	constructor()
 	{
@@ -48,4 +48,4 @@ class Peer
 	}
 }
 
-module.exports = Peer
+module.exports = PeerClient
