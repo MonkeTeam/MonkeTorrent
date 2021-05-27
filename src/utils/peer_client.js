@@ -1,4 +1,4 @@
-const Peer = require('peerjs-on-node').Peer
+const Peer = require('peerjs-on-node'); // problem is here
 
 class PeerClient
 {
