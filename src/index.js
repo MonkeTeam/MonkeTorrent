@@ -19,7 +19,9 @@ const createWindow = () => {
 		}
 	});
 
-	mainWindow.loadFile(path.join(__dirname, 'index.html'));
+	mainWindow.loadFile(path.join(__dirname, '../react/public/index.html')); // react
+	// mainWindow.loadFile(path.join(__dirname, 'index.html')) // plain html
+	
 	// developer tools to show
 	mainWindow.webContents.openDevTools();
 };
@@ -43,6 +45,13 @@ app.on('activate', () => {
 		createWindow();
 	}
 });
+
+
+// Auto reload
+require('electron-reload')(__dirname, {
+	electron: path.join(__dirname, 'node_modules', '.bin', 'electron')
+});
+
 
 
 // Top Menus
