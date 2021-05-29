@@ -1,16 +1,12 @@
-const Store = require('electron-store');
-const WebTorrent = require('webtorrent');
 const fs = require('fs')
+const Config = require('./utils/config.js');
 
-let torrent_client = new WebTorrent();
+let { addTorrent, deleteAllTorrent } = require('./ui/torrent_list_handlers.js');
 
-let magnet = '5b945fa004eb7ba4a2378be99335952c8802ac4a';
-let files = document.querySelector('#files');
 
-const store = new Store();
+// let magnet = '5b945fa004eb7ba4a2378be99335952c8802ac4a';
+// let files = document.querySelector('#files');
 
-// store.set('asd', '12312asdasd123');
-console.log(store.get('asd'));
 
 
 // torrent_client.add(magnet, {path: './'}, (torrent) => {
