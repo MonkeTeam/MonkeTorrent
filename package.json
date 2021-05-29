@@ -11,13 +11,13 @@
   "license": "ISC",
   "devDependencies": {
     "electron": "^11.0.4",
-    "electron-builder": "^22.9.1"
+    "electron-builder": "^22.9.1",
+    "electron-packager": "^15.2.0",
   },
   "build": {
-    "appId": "com.ishmam.promethewz",
-    "win": {
-      "target": "nsis",
-      "icon": "build/icon.ico"
+    "appId": "com.MonkeTeam.MonkeTorrent",
+    "linux": {
+      "target": "appImage"
     }
   },
   "dependencies": {
