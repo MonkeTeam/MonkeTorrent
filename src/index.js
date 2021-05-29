@@ -2,7 +2,9 @@
 
 const { app, BrowserWindow, Menu } = require('electron');
 const path = require('path');
+const Store = require('electron-store');
 
+Store.initRenderer();
 // SET ENV
 // process.env.NODE_ENV = 'production';
 process.env.NODE_ENV = 'development';
@@ -19,12 +21,29 @@ const createWindow = () => {
 		}
 	});
 
-	mainWindow.loadFile(path.join(__dirname, '../react/public/index.html')); // react
-	// mainWindow.loadFile(path.join(__dirname, 'index.html')) // plain html
+	// mainWindow.loadFile(path.join(__dirname, '../react/public/index.html')); // react
+	mainWindow.loadFile(path.join(__dirname, 'index.html')) // plain html
 	
 	// developer tools to show
 	mainWindow.webContents.openDevTools();
 };
+
+// Top Menus
+const mainMenuTemplate =  [
+	// Each object is a dropdown
+	{
+		label: 'File',
+		submenu:[
+			{
+				label: 'Quit',
+				accelerator:process.platform == 'darwin' ? 'Command+Q' : 'Ctrl+Q',
+				click(){
+					app.quit();
+				}
+			}
+		]
+	}
+];
 
 app.on('ready', function() {
 	createWindow();
@@ -51,25 +70,6 @@ app.on('activate', () => {
 require('electron-reload')(__dirname, {
 	electron: path.join(__dirname, 'node_modules', '.bin', 'electron')
 });
-
-
-
-// Top Menus
-const mainMenuTemplate =  [
-	// Each object is a dropdown
-	{
-		label: 'File',
-		submenu:[
-			{
-				label: 'Quit',
-				accelerator:process.platform == 'darwin' ? 'Command+Q' : 'Ctrl+Q',
-				click(){
-					app.quit();
-				}
-			}
-		]
-	}
-];
 
 // If OSX, add empty object to menu
 if(process.platform == 'darwin'){

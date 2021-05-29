@@ -1,7 +1,7 @@
 {
-  "name": "Electron-boiler-plate",
-  "version": "1.0.0",
-  "description": "start quickly with elecron js",
+  "name": "MonkeTorrent",
+  "version": "0.0.1",
+  "description": "MonkeTorrent, made by MonkeTeam",
   "main": "src/index.js",
   "scripts": {
     "start": "webpack --config webpack.common.js --watch",
@@ -34,9 +34,9 @@
     }
   },
   "dependencies": {
-    "@mapbox/node-pre-gyp": "^1.0.5",
-    "peerjs-on-node": "^1.0.2",
+    "electron-store": "^8.0.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "webtorrent": "^1.0.0"
   }
 }
