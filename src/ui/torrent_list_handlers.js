@@ -36,26 +36,14 @@ function addTorrent()
 
 	let monke_torrent = new MonkeTorrent()
 
-<<<<<<< HEAD
-	// let torrent = monke_torrent.add(torrent_info, '.').then(t => {
-	// 	setInterval(() => {
-	// 		console.log('progress', t.progress)
-	// 		console.log('download speed', t.downloadSpeed / 1024)
-	// 		console.log('downloaded', t.downloaded)	
-	// 	}, 1000);
-	// });
-
-
-=======
 	let torrent = monke_torrent.add(torrent_info, '.').then(t => {
 		setInterval(() => {
 			console.log('progress', t.progress)
-			console.log('download speed', t.downloadSpeed)
+			console.log('download speed', t.downloadSpeed / 1024)
 			console.log('downloaded', t.downloaded)	
 		}, 1000);
 	});
 	
->>>>>>> master
 	console.log('torrent', torrent)
 
 	torrent_input.value = '';
