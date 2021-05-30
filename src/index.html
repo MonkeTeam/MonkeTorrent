@@ -9,13 +9,18 @@
 
 <body>
 	
-	<h1>Happy coding!</h1>
-	
-	<input type="text" id="conn_id">
-	<button id="connect">Connect</button>
-	<button onclick="sendMessage()">Send</button>
+	<h1>Monke Torrent</h1>
 
-	<div id="files"></div>
+	<div>
+		<input type="text" id="torrent_input">
+		<button onclick="addTorrent()">Add</button>
+		<button onclick="deleteAllTorrent()">Delete all</button>
+	</div>
+	
+	<h2>Torrents</h2>
+	<ul id="torrents">
+		
+	</ul>
 
 	<script src="app.js" defer></script>
 
