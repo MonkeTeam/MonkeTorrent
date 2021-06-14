@@ -41,6 +41,15 @@ function addTorrent()
 			console.log('progress', t.progress)
 			console.log('download speed', t.downloadSpeed / 1024)
 			console.log('downloaded', t.downloaded)	
+
+			if(t.progress == 1)
+			{
+				monke_torrent.seed(t, torrent => {
+				 	setInterval(() => {
+					 	console.log('upload speed', torrent.uploadSpeed);
+				 	}, 1000);
+				 })
+			}
 		}, 1000);
 	});
 	
